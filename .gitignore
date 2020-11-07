@@ -5,9 +5,9 @@ jspm_packages
 # Serverless directories
 .serverless
 /.idea/
-/leeme.txt
 .env
 # Ignore serverless manifest files
 serverless.manifest.json
 .serverless/manifest.json
 /setAwsProfile.sh
+/notas/
