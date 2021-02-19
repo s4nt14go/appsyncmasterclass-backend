@@ -1,4 +1,4 @@
-service: appsyncmasterclass-backend
+service: appsyncmasterclass-backend 
 frameworkVersion: '2'
 
 plugins:
