@@ -72,7 +72,7 @@ describe('Given two authenticated users, use A and user B', () => {
             inReplyToUserIds: expect.arrayContaining([userA.username, userB.username])
           })
           expect(reply.inReplyToUserIds).toHaveLength(2)
-        })
+        }, 500)
       })
     })
 
