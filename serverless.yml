@@ -1,4 +1,4 @@
-service: appsyncmasterclass-backend 
+service: appsyncmasterclass-backend
 frameworkVersion: '2'
 
 plugins:
@@ -14,10 +14,6 @@ provider:
   environment:
     STAGE: ${self:custom.stage}
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
-  stackTags:
-    SERVICE: ${self:service}
-  tags:
-    SERVICE: ${self:service}
 
 package:
   exclude:
@@ -199,19 +195,6 @@ functions:
         Resource:
           - !Sub arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${self:custom.stage}/algolia-app-id
           - !Sub arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${self:custom.stage}/algolia-admin-key
-
-    syncTweetsToAlgolia:
-      handler: functions/sync-tweets-to-algolia.handler
-      events:
-        - stream:
-            type: dynamodb
-            arn: !GetAtt TweetsTable.StreamArn
-      iamRoleStatements:
-        - Effect: Allow
-          Action: ssm:GetParameters
-          Resource:
-            - !Sub arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${self:custom.stage}/algolia-app-id
-            - !Sub arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${self:custom.stage}/algolia-admin-key
 
   syncTweetsToAlgolia:
     handler: functions/sync-tweets-to-algolia.handler
