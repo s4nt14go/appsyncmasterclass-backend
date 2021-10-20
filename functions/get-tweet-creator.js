@@ -10,8 +10,10 @@ module.exports.handler = async (payloads) => {
 
   if (selection.length === 1 && selection[0] === 'id') {
     return userIds.map(id => ({
-      id,
-      __typename: id === caller ? 'MyProfile' : 'OtherProfile'
+      data: {
+        id,
+        __typename: id === caller ? 'MyProfile' : 'OtherProfile'
+      }
     }))
   }
 
