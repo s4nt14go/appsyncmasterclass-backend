@@ -11,3 +11,5 @@ serverless.manifest.json
 .serverless/manifest.json
 /setAwsProfile.sh
 /notas/
+
+.artillery/users.csv
