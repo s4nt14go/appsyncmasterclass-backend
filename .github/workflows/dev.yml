@@ -17,9 +17,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      # Use node 14 to avoid deployment error: Resource handler returned message: "Uploaded file must be a non-empty zip (Service: Lambda...
       - uses: actions/setup-node@v3
         with:
-#         Use node 14 to avoid deployment error: Resource handler returned message: "Uploaded file must be a non-empty zip (Service: Lambda...
           node-version: '14.x'
 
       - name: npm ci
