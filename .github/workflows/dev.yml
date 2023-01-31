@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          # Use node 14 to avoid deployment error: Resource handler returned message: "Uploaded file must be a non-empty zip (Service: Lambda...
+#         Use node 14 to avoid deployment error: Resource handler returned message: "Uploaded file must be a non-empty zip (Service: Lambda...
           node-version: '14.x'
 
       - name: npm ci
