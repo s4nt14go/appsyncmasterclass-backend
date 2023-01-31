@@ -23,10 +23,10 @@ jobs:
           node-version: '14.x'
 
       - name: npm ci
+        # artillery is recommended to be installed globally, v2.0.0-21 works on node 14
         run: |
           node -v
           npm -v
-#         artillery is recommended to be installed globally, v2.0.0-21 works on node 14
           npm install -g artillery@2.0.0-21
           npm ci
 
