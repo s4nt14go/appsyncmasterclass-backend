@@ -19,12 +19,14 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: '14.x'  # Use node 14 to avoid deployment error: Resource handler returned message: "Uploaded file must be a non-empty zip (Service: Lambda...
 
       - name: npm ci
         run: |
           node -v
-          nvm ls
+          npm -v
+#         artillery is recommended to be installed globally, v2.0.0-21 works on node 14
+          npm install -g artillery@2.0.0-21
           npm ci
 
 #       Avoid error "Found preexisting AWS CLI installation: /usr/local/aws-cli/v2/current. Please rerun install script with --update flag." by commenting this step
