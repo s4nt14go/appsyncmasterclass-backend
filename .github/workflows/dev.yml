@@ -22,7 +22,10 @@ jobs:
           node-version: '14.x'
 
       - name: npm ci
-        run: npm ci
+        run: |
+          node -v
+          nvm ls
+          npm ci
 
 #       Avoid error "Found preexisting AWS CLI installation: /usr/local/aws-cli/v2/current. Please rerun install script with --update flag." by commenting this step
 #      - name: install AWS CLI
