@@ -80,6 +80,8 @@ describe('Given two authenticated users', () => {
           notifications.push(resp.data.onNotified)
         }
       })
+
+        await new Promise(resolve => setTimeout(resolve, 3000));
     })
 
     afterAll(() => {
