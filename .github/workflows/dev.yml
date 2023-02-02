@@ -23,11 +23,9 @@ jobs:
           node-version: '14.x'
 
       - name: npm ci
-        # artillery is recommended to be installed globally, v2.0.0-21 works on node 14
+        # artillery is recommended to be installed globally, v2.0.0-21 works on node 14, if it's used in the pipeline add the following to run commands
+        # npm install -g artillery@2.0.0-21
         run: |
-          node -v
-          npm -v
-          npm install -g artillery@2.0.0-21
           npm ci
 
 #       Avoid error "Found preexisting AWS CLI installation: /usr/local/aws-cli/v2/current. Please rerun install script with --update flag." by commenting this step
